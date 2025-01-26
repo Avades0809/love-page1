@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding-top: 100px;
+    }
+    h1{
+        margin-left: 170px;
+        font-size: 40px;
+        color: rgb(20, 23, 5);
+    }
+    #game-container {
+        position: relative;
+        width: 600px;
+        height: 500px;
+        background-image: url("Avadesh.jpg" );
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        margin: 5px;
+        border-radius: 10px;
+        box-shadow: 5px 6px 12px #c3a6ce;
+    }
+    #yes {
+        position: absolute;
+        top: 100px;
+        left: 200px;
+        background-color: rgb(3, 243, 43);
+        border: none;
+        width: 90px;
+        border-radius: 10px;
+        font-size: 25px;
+        padding: 8px;
+        cursor: pointer;
+        transition: top 0.2s, left 0.2s;
+    }
+    #target {
+        position: absolute;
+        top: 100px;
+        left: 320px;
+        background-color: rgb(255, 80, 90);
+        border: none;
+        width: 90px;
+        border-radius: 10px;
+        font-size: 25px;
+        padding: 8px;
+        cursor: pointer;
+        transition: top 0.2s, left 0.2s;
+    }
+</style>
+<script>
+    function movetarget() {
+        const target = document.getElementById('target');
+        const maxWidth = 400;
+        const maxHeight = 400;
+
+        const randomX = Math.floor(Math.random() * maxWidth);
+        const randomY = Math.floor(Math.random() * maxHeight);
+
+        target.style.left = randomX + 'px';
+        target.style.top = randomY + 'px';
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const target = document.getElementById('target');
+        target.addEventListener('mouseover', movetarget);
+    });
+    function reply(){
+        alert("Thank you my darling");
+        window.location.href="img2.jpg";
+       
+    }
+</script>
+<body>
+    <div id="game-container">
+        <div class="box">
+            <h1>Do you love me?</h1>
+            <button id="target">No</button>
+            <button id="yes" onclick="reply()">Yes</button>
+        </div>
